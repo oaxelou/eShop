@@ -16,23 +16,12 @@ body{
 	width:100%;
 	height: auto;
 	margin: 0 auto;
-	/* min-height: 2000px; */
-	/* margin: 0 auto; */
-	/* border-radius: 20px;
-	border-color: #ff0000;
-	border-width: 3px;
-	border-style: solid; */
 }
 
 .container{
 	width: 1000px;
 	height: 100%;
-	/* min-height: 500px; */
 	margin: 0 auto;
-	/* border-radius: 20px;
-	border-color: #ffff00;
-	border-width: 3px;
-	border-style: solid; */
 }
 
 /******************************************************************************/
@@ -121,7 +110,6 @@ body{
 
 .navbar a{
 	display: inline-block;
-	/*color: white;*/
 	padding: 0 10px;
 	text-decoration: none;
 	font-weight: bold;
@@ -133,7 +121,6 @@ body{
 	width:auto;
 	height:auto;
 	background-color: #2a2b2c;
-	/* background-color: #cfcfcf; */
 	padding: 10px;
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -141,46 +128,28 @@ body{
 	border-color: #2a2b2c;
 	border-width: 3px;
 	border-style: groove;
-	/* z-index: 1000; */
 	color: black;
 }
 
-.home_btn{
+.dropdown, .home_btn,.about_us_btn{
 	position: relative;
 	float: left;
-	/* background-color: white; */
 	margin-right: 10px;
 	color:white;
 }
-
-.home_btn a{color: white;}
-.dropdown {
-  /* position: relative; */
-  float: left;
-  overflow: hidden;
-  /* background-color: white; */
-  margin-right: 10px;
-  /* color: white; */
-}
+.home_btn a,.about_us_btn a {color: white}
+.home_btn a:active,.about_us_btn a:active {color:gray;}
+.navbar a:hover, .dropdown:hover .dropbtn {opacity: 0.7;}
 
 .dropdown .dropbtn {
   font-size: 16px;
   border: none;
   outline: none;
   color: white;
-  /* padding: 14px 16px; */
   font-weight: bold;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn {
-  opacity: 0.7;
-  /* border-radius: 20px;
-  border-color: #ff0000;
-  border-width: 3px;
-  border-style: solid; */
 }
 
 .dropdown-content {
@@ -202,23 +171,8 @@ body{
   text-align: left;
 }
 
-.dropdown-content a:hover {
-  background-color: white;
-}
+.dropdown:hover .dropdown-content {display: block;}
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.about_us_btn{
-	position: relative;
-	float: left;
-	/* background-color: white; */
-	margin-right: 10px;
-	color:white;
-}
-.about_us_btn a {color: white}
-.about_us_btn a:active {color:gray;}
 /*********************** Slider Style *************************************************/
 .main_body{
 	min-height: 500px;
@@ -237,7 +191,6 @@ body{
 	border-width: 7px;
 	border-style: groove;
 	margin-top: 15px;
-
 	width: 100%;
 	height: 100%;
 	float: left;
@@ -407,7 +360,6 @@ body{
 	width: 100%;
 	position: relative;
 	float: left;
-
 	margin-top: 100px;
 	margin-bottom: 50px;
 }
@@ -444,8 +396,6 @@ body{
 	min-width: 100px;
 	max-height: 70px;
 	padding: 10px;
-	/*padding-left: 50px;
-	padding-right: 50px; */
 	text-align: center;
 }
 
@@ -471,7 +421,6 @@ input[type=checkbox]{
 	margin-bottom: 50px;
 	position: relative;
 	float: left;
-	/* line-height: 33px; */
 }
 
 .options_area img{
@@ -481,11 +430,9 @@ input[type=checkbox]{
 }
 
 .continue_shopping_btn{
-	/* width: 20%; */
 	position: relative;
 	float: left;
 	border: 2px groove #fcc60d;
-	/* border-style: */
 	border-radius: 10px;
 	line-height: 20px;
 	padding: 5px;
@@ -504,11 +451,9 @@ input[type=checkbox]{
 }
 
 .update_cart_btn{
-	/* width: 20%; */
 	position: relative;
 	float: left;
 	border: 2px groove #fcc60d;
-	/* border-style: */
 	border-radius: 10px;
 	line-height: 20px;
 	padding: 5px;
@@ -526,11 +471,9 @@ input[type=checkbox]{
 }
 
 .clear_cart_btn{
-	/* width: 20%; */
 	position: relative;
 	float: left;
 	border: 2px groove #fcc60d;
-	/* border-style: */
 	border-radius: 10px;
 	line-height: 20px;
 	padding: 5px;
@@ -575,7 +518,6 @@ input[type=checkbox]{
 	height: auto;
 	margin-left: 7px;
 	padding: 10px;
-	/* margin-top: 100px; */
 	margin-bottom: 20px;
 }
 
@@ -631,8 +573,6 @@ input[type=checkbox]{
 	padding-top: 15px;
 	padding-bottom: 10px;
 	color: gray;
-	/* border-bottom-color: gray;
-	border-bottom-style: solid; */
 	border-bottom-radius: 20px;
 	border-bottom-color: gray;
 	border-bottom-width: 3px;
@@ -642,14 +582,8 @@ input[type=checkbox]{
 .shipping_details_column td{
 	width: 50%;
 	height: 30px;
-	/* position: relative;
-	float: left; */
 	color: black;
 	font-weight: bold;
-	/* border-radius: 20px;
-	border-color: #ff0000;
-	border-width: 3px;
-	border-style: solid; */
 }
 
 .shipping_details_column input{
@@ -673,8 +607,6 @@ input[type=checkbox]{
 	padding-top: 15px;
 	padding-bottom: 10px;
 	color: gray;
-	/* border-bottom-color: gray;
-	border-bottom-style: solid; */
 	border-bottom-radius: 20px;
 	border-bottom-color: gray;
 	border-bottom-width: 3px;
@@ -686,17 +618,9 @@ input[type=checkbox]{
 	padding-bottom: 5px;
 	padding-left:
 	width: 100%;
-	/* font-size: 20px; */
-	/* border-radius: 20px;
-	border-color: #ff0000;
-	border-width: 3px;
-	border-style: solid; */
 }
 
-.creditCardText,
-.cc-expires,
-.cc-cvc,
-.form-submit{
+.creditCardText,.cc-expires,.cc-cvc,.form-submit{
 	width: 100%;
 	height: 40px;
 	border-radius: 10px;
@@ -706,18 +630,12 @@ input[type=checkbox]{
 	overflow: hidden;
 }
 
-.cc-expires,
-.cc-cvc{
+.cc-expires,.cc-cvc{
 	width: 90%;
 }
 
-.cc-expires{
-	margin-left: 10%;
-}
-
-.cc-cvc{
-	margin-right: 10%;
-}
+.cc-expires{margin-left: 10%;}
+.cc-cvc{margin-right: 10%;}
 
 .form-submit{
 	height: 40px;
@@ -736,13 +654,11 @@ input[type=checkbox]{
 	float: left;
 	width: 50%;
 	height:auto;
-	/* background-color: blue; */
 }
 
 .order_details_column table{
 	padding-top: 10px;
 	padding-right: 10px;
-	/* padding-right: 10px; */
 }
 
 .order_details_column h4{
@@ -754,8 +670,6 @@ input[type=checkbox]{
 	padding-top: 15px;
 	padding-bottom: 10px;
 	color: gray;
-	/* border-bottom-color: gray;
-	border-bottom-style: solid; */
 	border-bottom-radius: 20px;
 	border-bottom-color: gray;
 	border-bottom-width: 3px;
@@ -770,8 +684,6 @@ input[type=checkbox]{
 	padding-top: 15px;
 	padding-bottom: 10px;
 	color: gray;
-	/* border-bottom-color: gray;
-	border-bottom-style: solid; */
 	border-bottom-radius: 20px;
 	border-bottom-color: gray;
 	border-bottom-width: 3px;
@@ -787,7 +699,6 @@ input[type=checkbox]{
 	height: 50px;
 	color: black;
 	font-weight: bold;
-	/* border-bottom-radius: 20px; */
 	border-top-color: gray;
 	border-top-width: 2px;
 	border-top-style: solid;
@@ -805,6 +716,15 @@ input[type=checkbox]{
 	position: relative;
 	float: left;
 	width: 80%;
+}
+
+/********* THANKYOU PAGE **********************************/
+.thankyou img{
+	height: 500px;
+	position: relative;
+	float: left;
+	margin-left: 35%;
+	margin-bottom: 100px;
 }
 
 /********* LOGIN **********************************/
