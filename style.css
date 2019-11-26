@@ -794,6 +794,118 @@ input[type=checkbox]{
 	width: 80%;
 }
 
+/********* LOGIN **********************************/
+
+.login,
+.register {
+	background-color: inherit;
+	color: black;
+	width: 100%
+	height:auto;
+	/*min-height: 500px;*/
+	margin-top: 40px;
+
+}
+.login, .register p {
+
+	font-family:verdana;
+	text-align:center;
+	padding-bottom: 25px;
+}
+
+
+.login .login_register_titles h1,
+.register .login_register_titles h1{
+	font-family:verdana;
+	text-align:center;
+	padding: 20px;
+	margin-top: 100px;
+	position: relative;
+	float: left;
+	width: 100%;
+
+}
+
+#login_button{
+
+	margin-top:80px;
+	margin-right: 150px;
+	font-family: verdana;
+	width:80px;
+	height: auto;
+	font-size: 15px;
+	/*text-align: center;*/
+	border: 2px solid #FF8C00;
+	border-radius: 3px;
+
+}
+
+
+#register_button {
+	margin-top:15px;
+	margin-right: 150px;
+	position: relative;
+
+	font-family: verdana;
+	width:80px;
+	height: auto;
+	font-size: 15px;
+	/*text-align: center;*/
+	border: 2px solid #FF8C00;
+	border-radius: 3px;
+
+}
+
+
+#login_button:hover,
+#register_button:hover,
+{
+	opacity: 0.7;
+}
+
+.login .tables,
+.register .tables {
+	font-family:verdana;
+	text-align: left;
+	width: 100%;
+	height: auto;
+	/*margin-left: 400px;*/
+	margin-top: 40px;
+	margin-bottom: 50px;
+	position: relative;
+	float: left;
+}
+
+.page_title {
+	position: relative;
+	float: left;
+	margin-bottom: 50px;
+	margin-top: 100px;
+	width: 100%;
+
+}
+
+.both_container {
+	width: 100%;
+	position: relative;
+	float: left;
+	height: auto;
+
+}
+.left_container {
+	width: 50%;
+	position: relative;
+	float: left;
+	height: auto;
+	}
+
+.right_container {
+	width: 50%;
+	position: relative;
+	float: right;
+	height: auto;
+	}
+
 /******************************************************************************/
 .footer {
 	width: 100%;
