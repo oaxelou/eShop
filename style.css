@@ -3,7 +3,6 @@
 *{
 	padding:0;
 	margin:0;
-	height: 100%;
 }
 
 body{
@@ -413,6 +412,10 @@ input[type=checkbox]{
   -o-transform: scale(2); /* Opera */
   transform: scale(2);
   padding: 10px;
+}
+
+input[type="radio"]{
+	-webkit-appearance: radio;
 }
 /***********************************/
 .options_area{
