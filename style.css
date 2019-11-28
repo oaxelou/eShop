@@ -3,6 +3,7 @@
 *{
 	padding:0;
 	margin:0;
+	/* height: 100%; */
 }
 
 body{
@@ -719,6 +720,10 @@ input[type="radio"]{
 	position: relative;
 	float: left;
 	width: 80%;
+}
+
+.order_details_column img{
+	height: 100%;
 }
 
 /********* THANKYOU PAGE **********************************/
