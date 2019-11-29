@@ -203,16 +203,22 @@ body{
 }
 
 .arrows{
-	height:200px;
+	/* height:200px; */
 	width: inherit;
 	position: absolute;
 	float: left;
 	z-index: 1000;
 }
 
+.arrows img,
+.arrows img{
+	height: 100px;
+	width: 100px;
+}
+
 .arrows #next,
 .arrows #prev{
-	height: 80px;
+	/* height: 80px; */
 	width: 100px;
 	text-decoration: none;
 	text-align: arrows;
@@ -224,16 +230,20 @@ body{
 }
 
 .arrows #prev{
+	/* height: 100%; */
 	float: left;
 
 }
 
 .arrows #next{
+	/* height: 100%; */
 	float: right;
+	/* margin-right: 70px; */
 }
 
 .arrows #prev:hover,
 .arrows #next:hover{
+	/* height: 100%; */
 	opacity:.9;
 }
 
