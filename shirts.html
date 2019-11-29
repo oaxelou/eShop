@@ -12,7 +12,7 @@
 		<div class="topbar"></div>
 		<div class="social_icon">
 			<div class="container">
-				
+
 				<div class="header_right">
 					<div class="login_register_btn">
 						<a href="login_register.html">Login /</a>
@@ -62,15 +62,17 @@
 							<h4>Red Shirt</h4>
 						</div>
 
-						<div class="star_rating">
+						<!-- <div class="star_rating">
 							<img src="images/star_icon.png">
 							<img src="images/star_icon.png">
 							<img src="images/star_icon.png">
 							<img src="images/star_icon.png">
-						</div>
+						</div> -->
 
-						<div class="product_desc">
-							<b>Red turtleneck shirt!</b>
+						<div class="product_desc_box">
+							<div class="product_desc">
+								Red turtleneck shirt!sdk dknfjkdnf djnfj ndjfd df ndj nfdjf ndjf ndj fndjf nj fndj nfdj nfdj 
+							</div>
 						</div>
 
 						<div class="product_price">
@@ -78,9 +80,14 @@
 								18.99$
 							</div>
 
-							<div class = "button">
-								ADD TO CART 	
-							</div>
+							<form action="Cart" method="post">
+								<input name="quantity" value="1" type="number" min="1" max="5" onkeydown="false" style="float:right;border: 2px groove #333333;border-radius:5px">
+								<input name="pid" value="0" type="hidden">
+								<!-- <input type="text" name="username"> -->
+								<div class = "button">
+									<input type="submit" value="ADD TO CART" class="add_to_cart_btn">
+								</div>
+							</form>
 						</div>
 					</div>
 <!-----------------------------------------------------2------------------------------------->
@@ -110,7 +117,7 @@
 							</div>
 
 							<div class = "button">
-								ADD TO CART 	
+								ADD TO CART
 							</div>
 						</div>
 					</div>
@@ -141,7 +148,7 @@
 							</div>
 
 							<div class = "button">
-								ADD TO CART 	
+								ADD TO CART
 							</div>
 						</div>
 					</div>
@@ -160,7 +167,7 @@
 							<img src="images/star_icon.png">
 							<img src="images/star_icon.png">
 							<img src="images/star_icon.png">
-							
+
 						</div>
 
 						<div class="product_desc">
@@ -173,7 +180,7 @@
 							</div>
 
 							<div class = "button">
-								ADD TO CART 	
+								ADD TO CART
 							</div>
 						</div>
 					</div>
@@ -193,7 +200,7 @@
 							<img src="images/star_icon.png">
 							<img src="images/star_icon.png">
 							<img src="images/star_icon.png">
-							
+
 						</div>
 
 						<div class="product_desc">
@@ -206,10 +213,10 @@
 							</div>
 
 							<div class = "button">
-								ADD TO CART 	
+								ADD TO CART
 							</div>
 						</div>
-					</div>			
+					</div>
 
 
 	<!----------------------------------------------------- 6 --------------------------------------->
@@ -226,7 +233,7 @@
 							<img src="images/star_icon.png">
 							<img src="images/star_icon.png">
 							<img src="images/star_icon.png">
-							
+
 						</div>
 
 						<div class="product_desc">
@@ -239,10 +246,10 @@
 							</div>
 
 							<div class = "button">
-								ADD TO CART 	
+								ADD TO CART
 							</div>
 						</div>
-					</div>		
+					</div>
 
 	<!----------------------------------------------------- 7 --------------------------------------->
 					<div class="product_one">
@@ -271,10 +278,10 @@
 							</div>
 
 							<div class = "button">
-								ADD TO CART 	
+								ADD TO CART
 							</div>
 						</div>
-					</div>	
+					</div>
 
 <!----------------------------------------------------- 8 --------------------------------------->
 					<div class="product_one">
@@ -303,10 +310,10 @@
 							</div>
 
 							<div class = "button">
-								ADD TO CART 	
+								ADD TO CART
 							</div>
 						</div>
-					</div>	
+					</div>
 
 
 			</div>
@@ -360,7 +367,7 @@
 				<a href="#">Home</a>
 				<a href="#">Products</a>
 				<a href="#">Women</a>
-				
+
 			</div>
 			<div class="copyrights">
 				©2019 All Rights Reserved
