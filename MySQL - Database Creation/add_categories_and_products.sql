@@ -68,3 +68,29 @@ insert into belongsto values(15, "Trousers");
 -- -----------------------------------------------------------------
 insert into belongsto values(0, "Trousers");
 insert into belongsto values(0, "Shoes");
+
+---------------------------------------------------------------------------------------------------
+
+insert into product values(16, "Ankle Boots", "Black patent leather ankle boots ", 20, 67, "images/womens_shoes1.png");
+insert into belongsto values(16, "Shoes");
+
+insert into product values(17, "Boots", "Suede over the knee black boots", 20, 56, "images/womens_shoes2.png");
+insert into belongsto values(17, "Shoes");
+
+insert into product values(18, "Ankle Boots", "Suede pointy lace-up black boots", 20, 90, "images/womens_shoes3.png");
+insert into belongsto values(18, "Shoes");
+
+insert into product values(19, "White Boots", "Estil patented leather block heel boots", 20, 34, "images/womens_shoes4.png");
+insert into belongsto values(19, "Shoes");
+
+insert into product values(20, "Boots", "Pointy black heel boots.", 20, 67, "images/womens_shoes5.png");
+insert into belongsto values(20, "Shoes");
+
+insert into product values(21, "Green heels", "Pointy block heels in green", 20, 56.89, "images/womens_shoes6.png");
+insert into belongsto values(21, "Shoes");
+
+insert into product values(22, "Suede Boots", "Suede black boots", 20, 78, "images/womens_shoes7.png");
+insert into belongsto values(22, "Shoes");
+
+insert into product values(23, "Cowboy Boots", "Golden shiny cowboy Boots.", 20, 27.89, "images/womens_shoes8.png");
+insert into belongsto values(23, "Shoes");
