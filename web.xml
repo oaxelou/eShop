@@ -22,7 +22,6 @@
   	<url-pattern>/Login</url-pattern>
   </servlet-mapping>
   
-      
   <servlet>
   	<servlet-name>Shirts</servlet-name>
   	<servlet-class>Util.Shirts</servlet-class>
@@ -31,6 +30,16 @@
   <servlet-mapping>
   	<servlet-name>Shirts</servlet-name>
   	<url-pattern>/Shirts</url-pattern>
+  </servlet-mapping>
+        
+  <servlet>
+  	<servlet-name>Trousers</servlet-name>
+  	<servlet-class>Util.Trousers</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Trousers</servlet-name>
+  	<url-pattern>/Trousers</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>
