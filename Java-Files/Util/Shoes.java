@@ -9,12 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Shirts extends HttpServlet {
+public class Shoes extends HttpServlet {
 	static String header_str = "<!DOCTYPE html>\r\n" + 
 			"<html>\r\n" + 
 			"<head>\r\n" + 
 			"	<meta charset=\"UTF-8\">\r\n" + 
-			"	<title>Womens Shirts</title>\r\n" + 
+			"	<title>Womens Shoes</title>\r\n" + 
 			"	<link rel =\"stylesheet\"  href=\"style.css\">\r\n" + 
 			"	<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n" + 
 			"</head>\r\n" + 
@@ -62,7 +62,7 @@ public class Shirts extends HttpServlet {
 			"\r\n" + 
 			"		<div class=\"product\">\r\n" + 
 			"			<div class=\"container\">\r\n" + 
-			"				<div class=\"page_title\"> CHECK OUT OUR SHIRTS! </div>\r\n";
+			"				<div class=\"page_title\"> CHECK OUT OUR SHOES! </div>\r\n";
 	
 	static String footer_str = "\r\n" + 
 			"			</div>\r\n" + 
@@ -113,7 +113,7 @@ public class Shirts extends HttpServlet {
 			"	<div class=\"bottom\">\r\n" + 
 			"		<div class=\"container\">\r\n" + 
 			"			<div class=\"bottom_nav_bar\">\r\n" + 
-			"				<a href=\"\">Home</a>\r\n" + 
+			"				<a href=\"#\">Home</a>\r\n" + 
 			"				<a href=\"#\">Products</a>\r\n" + 
 			"				<a href=\"#\">Women</a>\r\n" + 
 			"				\r\n" + 
@@ -156,7 +156,7 @@ public class Shirts extends HttpServlet {
 			
 			// Search DB for the user that they gave
 			ResultSet searchResult = myStmt.executeQuery("select p.idproduct, p.pname, p.description, p.price, p.image_source " +
-					"from product as p, belongsto as b where (p.idproduct=b.idproduct_belongsto_FK) and (b.category_name=\"Shirts\"); ");  // 3. Form the SQL Query
+					"from product as p, belongsto as b where (p.idproduct=b.idproduct_belongsto_FK) and (b.category_name=\"Shoes\"); ");  // 3. Form the SQL Query
 			
 			String path2image = "images/womens_shirt1.png";
 			while(searchResult.next()) {

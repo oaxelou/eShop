@@ -184,10 +184,12 @@ public class Register extends HttpServlet {
 
 	            System.out.println(preparedStatement);
 	            // Execute the query or update query
+	            //returns the number of affected rows 
 	            result = preparedStatement.executeUpdate();
 
 	        } catch (SQLException e) {
 	            // process SQL exception
+	        	
 	            printSQLException(e);
 	        }
 	        return result;
@@ -215,7 +217,7 @@ public class Register extends HttpServlet {
 	    	PrintWriter pwriter = response.getWriter();
 	    	pwriter.println(header_str);
 	    	pwriter.println("<div class=\"page_title\">\r\n" + 
-					"				<h2>THANK YOU!</h2>\r\n" + 
+					"				<h2> </h2>\r\n" + 
 					"			</div>\r\n" + 
 					"");
 	    	
@@ -243,10 +245,33 @@ public class Register extends HttpServlet {
 	        user.setBirthdate(birthdate);
 
 	        try {
-	           registerUser(user);
+	           int res = registerUser(user);
 	           
-	           pwriter.println("<h2>" + "Sucessfully registered as " +user.getUsername() + "</h2>");
+	           //no affected rows 
+	           if (res == 0) {
+	        	   pwriter.println("<h2>" + "Username already exists: " +user.getUsername() + "</h2>");
+	        		
+					pwriter.println("<form action=\"login_register.html\" method=\"get\">\r\n" + 
+							"			<input name=\"username\" value=\""+ user + "\" type=\"hidden\">\r\n" + 
+							"			<div class = \"button\">\r\n" + 
+							"				<input type=\"submit\" value=\"Return to Registration page\" class=\"login_register_btn\">\r\n" + 
+							"			</div>\r\n" + 
+							"		</form>");
+	           }
+	           else {
+	        	   pwriter.println("<h2>" + "Sucessfully registered as " +user.getUsername() + "</h2>");
+	        	   pwriter.println("<form action=\"index\" method=\"post\">\r\n" + 
+							"			<input name=\"username\" value=\""+ user + "\" type=\"hidden\">\r\n" + 
+							"			<div class = \"button\">\r\n" + 
+							"				<input type=\"submit\" value=\"Return to Home\" class=\"login_register_btn\">\r\n" + 
+							"			</div>\r\n" + 
+							"		</form>");
+	           }
+
+	           
+	        
 	        } catch (Exception e) {
+	        	
 	            
 	            e.printStackTrace();
 	        }
@@ -255,10 +280,3 @@ public class Register extends HttpServlet {
 
 	    }
 	}
-
-
-
-
-
-
-	    

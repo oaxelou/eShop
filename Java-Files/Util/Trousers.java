@@ -1,3 +1,4 @@
+
 package Util;
 
 import java.io.*;
@@ -9,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class Trousers extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+
 	static String header_str = "<!DOCTYPE html>\r\n" + 
 			"<html>\r\n" + 
 			"<head>\r\n" + 
@@ -47,9 +51,9 @@ public class Trousers extends HttpServlet {
 			"						<div class=\"dropdown\">\r\n" + 
 			"							<button class=\"dropbtn\">WOMEN</button>\r\n" + 
 			"							<div class=\"dropdown-content\">\r\n" + 
-			"								<a href = \"shirts.html\">SHIRTS</a>\r\n" + 
-			"								<a href = \"trousers.html\">TROUSERS</a>\r\n" + 
-			"								<a href = \"shoes.html\">SHOES</a>\r\n" + 
+			"								<a href = \"Shirts\">SHIRTS</a>\r\n" + 
+			"								<a href = \"Trousers\">TROUSERS</a>\r\n" + 
+			"								<a href = \"Shoes\">SHOES</a>\r\n" + 
 			"							</div>\r\n" + 
 			"						</div>\r\n" + 
 			"\r\n" + 
@@ -61,7 +65,7 @@ public class Trousers extends HttpServlet {
 			"\r\n" + 
 			"		<div class=\"product\">\r\n" + 
 			"			<div class=\"container\">\r\n" + 
-			"				<div class=\"page_title\"> CHECK OUT OUR JEANS AND TROUSERS! </div>\r\n";
+			"				<div class=\"page_title\"> CHECK OUT OUR TROUSERS! </div>\r\n";
 	
 	static String footer_str = "\r\n" + 
 			"			</div>\r\n" + 
@@ -118,8 +122,8 @@ public class Trousers extends HttpServlet {
 			"				\r\n" + 
 			"			</div>\r\n" + 
 			"			<div class=\"copyrights\">\r\n" + 
-			"				Â©2019 All Rights Reserved\r\n" + 
-			"				<!-- <p>Â©2019 Musica Store by Helen & Olympia | All Rights Reserved</p> -->\r\n" + 
+			"				©2019 All Rights Reserved\r\n" + 
+			"				<!-- <p>©2019 Musica Store by Helen & Olympia | All Rights Reserved</p> -->\r\n" + 
 			"			</div>\r\n" + 
 			"		</div>\r\n" + 
 			"	</div>\r\n" + 
@@ -133,21 +137,20 @@ public class Trousers extends HttpServlet {
 			  throws IOException, ServletException{
 		System.out.println("HEREEEEEEEEEEEEEEEEEEEEE POST.");
 		
-	}
-	protected void doGet(HttpServletRequest req, HttpServletResponse res)
-			  throws IOException, ServletException{
+		String username = req.getParameter("username");
+		
+		
 		PrintWriter pwriter = res.getWriter();
 		pwriter.println(header_str);
-		System.out.println("HEREEEEEEEEEEEEEEEEEEEEE GET.");
-		
+	
 		/****************  START OF JDBC STUFF  *******************/
-		String url = "jdbc:mysql://localhost:3306/eshopdb";
+		String url = "jdbc:mysql://localhost:3306/eshopdb?allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 		String dbUser = "root";
-		String dbPassword = "2421057837olicia!";
+		String dbPassword = "1997";
 		
 		try {
 			System.out.println("1");
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("2");
 			Connection myConn = DriverManager.getConnection(url, dbUser, dbPassword);
 			System.out.println("3");// 1. Get a connection to database
@@ -155,30 +158,31 @@ public class Trousers extends HttpServlet {
 			System.out.println("4");													// 2. Create a statement
 			
 			// Search DB for the user that they gave
-			ResultSet searchResult = myStmt.executeQuery("select p.idproduct, p.pname, p.description, p.price, p.image_source from product as p, belongsto as b where (p.idproduct = b.idproduct_belongsto_FK) and (b.category_name_FK=\"Trousers\");   ;");  // 3. Form the SQL Query
+			ResultSet searchResult = myStmt.executeQuery("select p.idproduct, p.pname, p.description, p.price, p.image_source " +
+					"from product as p, belongsto as b where (p.idproduct=b.idproduct_belongsto_FK) and (b.category_name=\"Trousers\"); ");  // 3. Form the SQL Query
 			
 			String path2image = "images/womens_shirt1.png";
 			while(searchResult.next()) {
 				pwriter.println("<div class=\"product_one\">\r\n" + 
 						"						<div class=\"product_img\">\r\n" + 
-						"							<img src=\"" + searchResult.getString("p.image_source") + "\">\r\n" + 
+						"							<img src=\"" + searchResult.getString("image_source") + "\">\r\n" + 
 						"						</div>\r\n" + 
 						"\r\n" + 
 						"						<div class=\"product_text\">\r\n" + 
-						"							<h4>" + searchResult.getString("p.pname") + "</h4>\r\n" + 
+						"							<h4>" + searchResult.getString("pname") + "</h4>\r\n" + 
 						"						</div>\r\n" + 
 						"\r\n" + 
 						"						<div class=\"product_desc_box\"><div class=\"product_desc\">\r\n" + 
-						"							"+ searchResult.getString("p.description") +"\r\n" + 
+						"							"+ searchResult.getString("description") +"\r\n" + 
 						"						</div></div>\r\n" + 
 						"\r\n" + 
 						"						<div class=\"product_price\">\r\n" + 
-						"							<div class=\"price\"><b>$"+searchResult.getString("p.price")+"</b></div>\r\n" + 
+						"							<div class=\"price\"><b>$"+searchResult.getString("price")+"</b></div>\r\n" + 
 						"\r\n" + 
 						"						<form action=\"Cart\" method=\"post\">\r\n" + 
 						"							<input name=\"quantity\" value=\"1\" type=\"number\" min=\"1\" max=\"5\"  style=\"float:right;border: 2px groove #333333;border-radius:5px\">\r\n" + 
-						"							<input name=\"pid\" value=\""+searchResult.getString("p.idproduct")+"\" type=\"hidden\">\r\n" + 
-						"							<!-- <input type=\"text\" name=\"username\"> -->\r\n" + 
+						"							<input name=\"pid\" value=\""+searchResult.getString("idproduct")+"\" type=\"hidden\">\r\n" + 
+						"							<input name=\"username\" value=\""+username+"\" type=\"hidden\">\r\n" + 
 						"							<div class = \"button\">\r\n" + 
 						"								<input type=\"submit\" value=\"ADD TO CART\" class=\"add_to_cart_btn\">\r\n" + 
 						"							</div>\r\n" + 
@@ -186,10 +190,12 @@ public class Trousers extends HttpServlet {
 						"					</div>\r\n"+
 						"				</div>");
 				System.out.println("Product: "+ searchResult.getString("pname"));
+				
+				
 			}	
 
 		}catch(Exception exc) {
-			System.out.println("An error occurred while connecting MySQL databse: demo");
+			System.out.println("An error occurred while connecting MySQL databse:");
 			exc.printStackTrace();
 			System.out.println("\nError again my friend...");
 		}
@@ -197,5 +203,33 @@ public class Trousers extends HttpServlet {
 		//pwriter.println();
 		pwriter.println(footer_str);
 		pwriter.close();
+	
+		
+	}
+	protected void doGet(HttpServletRequest req, HttpServletResponse res)
+			  throws IOException, ServletException{
+		PrintWriter pwriter = res.getWriter();
+		pwriter.println(header_str);
+		System.out.println("HEREEEEEEEEEEEEEEEEEEEEE GET.");
+		
+		pwriter.println("You have to log in first ");
+		
+		pwriter.println("<form action=\"index.html\" method=\"post\">\r\n" + 
+				"			<div class = \"button\">\r\n" + 
+				"				<input type=\"submit\" value=\"Return to Home\" class=\"add_to_cart_btn\">\r\n" + 
+				"			</div>\r\n" + 
+				"		</form>\r\n" + 
+				"		<form action=\"login_register.html\" method=\"get\">\r\n" + 
+				"			<input type=\"submit\" value=\"Login/Register\" class=\"add_to_cart_btn\">\r\n" + 
+				"		</form>");
+		
+
+		
+		//pwriter.println();
+		pwriter.println(footer_str);
+		pwriter.close();
 	}
 }
+
+
+
