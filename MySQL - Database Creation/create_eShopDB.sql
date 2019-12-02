@@ -14,8 +14,8 @@ USE `eShopDB` ;
 CREATE TABLE IF NOT EXISTS `eShopDB`.`user` (
   `username` VARCHAR(16) NOT NULL,
   `password` VARCHAR(32) NOT NULL,
-  `first name` VARCHAR(45) NOT NULL,
-  `last name` VARCHAR(45) NOT NULL,
+  `first_name` VARCHAR(45) NOT NULL,
+  `last_name` VARCHAR(45) NOT NULL,
   `email` VARCHAR(255) NOT NULL,
   `address` VARCHAR(45) NOT NULL,
   `phone` VARCHAR(45) NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `eShopDB`.`product` (
   `idproduct` INT NOT NULL,
   `pname` VARCHAR(45) NOT NULL,
   `description` VARCHAR(100) NOT NULL,
-  `stock` INT NOT NULL,
+  `stock` INT(11) UNSIGNED NOT NULL,
   `price` FLOAT NOT NULL,
   `image_source` VARCHAR(100) NULL,
   PRIMARY KEY (`idproduct`))

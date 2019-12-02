@@ -1,21 +1,10 @@
+-- Create the categories
 insert into category values ("Shirts");
 insert into category values ("Trousers");
 insert into category values ("Shoes");
 
-select * from category;
--- ---------------------------------------------------------
-select * from product;
-delete from product ;
-
 -- --------------------------------
-select p.pname 
-from product as p, belongsto as b
-where (p.idproduct = b.idproduct_belongsto_FK) and (b.category_name_FK="Shirts");
-
--- --------------------------------
-select * from belongsto;
-delete from belongsto where idproduct_belongsto_FK=0;
-
+-- Insert the products 
 insert into product values(0, "Red Shirt", "This is a red turtleneck shirt.", 20, 18.99, "images/womens_shirt1.png");
 insert into belongsto values(0, "Shirts");
 
@@ -66,10 +55,6 @@ insert into product values(15, "Pink Tights", "Pink wlastic tights.", 20, 27.89,
 insert into belongsto values(15, "Trousers");
 
 -- -----------------------------------------------------------------
-insert into belongsto values(0, "Trousers");
-insert into belongsto values(0, "Shoes");
-
----------------------------------------------------------------------------------------------------
 
 insert into product values(16, "Ankle Boots", "Black patent leather ankle boots ", 20, 67, "images/womens_shoes1.png");
 insert into belongsto values(16, "Shoes");
@@ -94,3 +79,9 @@ insert into belongsto values(22, "Shoes");
 
 insert into product values(23, "Cowboy Boots", "Golden shiny cowboy Boots.", 20, 27.89, "images/womens_shoes8.png");
 insert into belongsto values(23, "Shoes");
+
+-- ------------------------------------------------------------------
+-- To check if the categories and products are ok.
+select * from belongsto;
+select * from category;
+select * from product;
