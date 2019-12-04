@@ -1,6 +1,0 @@
-Un-jar:
-jar -xvf yourWARfileName.war
-
-Javac command:
-Linux: javac -cp ../lib/mysql-connector-java-5.1.48.jar:../lib/servlet-api.jar Util/*.java
-Windows: javac -cp ..\lib\mysql-connector-java-5.1.48.jar;..\lib\servlet-api.jar Util\*.java
