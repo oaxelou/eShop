@@ -165,7 +165,7 @@ public class Register extends HttpServlet {
 
 	        Class.forName("com.mysql.jdbc.Driver");
 
-	        try (Connection connection = DriverManager.getConnection(url, "root", "2421057837olicia"); //connect to db
+	        try (Connection connection = DriverManager.getConnection(url, "root", "2421057837olicia!"); //connect to db
 
 	            // create statement 
 	            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {

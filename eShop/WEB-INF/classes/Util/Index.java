@@ -181,7 +181,7 @@ public class Index  extends HttpServlet {
 		/****************  START OF JDBC STUFF  *******************/
 		String url = "jdbc:mysql://localhost:3306/eshopdb?allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 		String dbUser = "root";
-		String dbPassword = "2421057837olicia";
+		String dbPassword = "2421057837olicia!";
 		String mystr = "select SUM(quantity) from cart where username_FK='" + username + "';";
 		System.out.println(mystr);
 		

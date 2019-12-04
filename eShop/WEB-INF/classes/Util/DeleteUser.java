@@ -100,7 +100,9 @@ public class DeleteUser extends Checkout {
 		"				<div class=\"container\">\r\n" + 
 		"					<div class=\"header_right\">\r\n" + 
 		"						<div class=\"login_register_btn\">\r\n" + 
-		"							<a href=\"login_register.html\"><i>Login / Register</i></a>\r\n" + 
+		"							<form action=\"login_register.html\" method=\"get\">\r\n" + 
+		"								<input type=\"submit\" value=\" Login / Register \" style=\"padding:2px; margin-top: 10px;cursor: pointer;font-size:15px;line-height: 30px;color:white;background-color:#353c42;font-weight:bold;border-color:#4d565f;border-width: 3px;border-radius:5px;\">\r\n" +
+		"							</form>\r\n" +
 		"						</div>\r\n" + 
 		"						<div class=\"cart_btn\">\r\n" + 
 		"							<form action=\"Cart\" method=\"get\">\r\n" + 
@@ -150,7 +152,7 @@ public class DeleteUser extends Checkout {
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
 		String url = "jdbc:mysql://localhost:3306/eshopdb?allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 		String dbUser = "root";
-		String dbPassword = "2421057837olicia";
+		String dbPassword = "2421057837olicia!";
 		String username=req.getParameter("username");
 		
 		PrintWriter pwriter = res.getWriter();

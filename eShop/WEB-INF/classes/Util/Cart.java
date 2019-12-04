@@ -223,7 +223,7 @@ public class Cart extends HttpServlet{
 			
 			String url="jdbc:mysql://localhost:3306/eshopdb?allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 			String dbUser = "root";
-			String dbPassword = "2421057837olicia";
+			String dbPassword = "2421057837olicia!";
 //			String sql = "select * from cart;";
 			
 			try {
@@ -349,7 +349,7 @@ public class Cart extends HttpServlet{
 			
 			String url="jdbc:mysql://localhost:3306/eshopdb?allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 			String dbUser = "root";
-			String dbPassword = "2421057837olicia";
+			String dbPassword = "2421057837olicia!";
 			String sql = "Insert into cart(username_FK, idproduct_cart_FK, quantity) values (?,?,?)";
 		
 			try {

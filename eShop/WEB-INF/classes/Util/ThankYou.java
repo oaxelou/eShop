@@ -158,7 +158,7 @@ public class ThankYou extends Checkout {
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
 		String url = "jdbc:mysql://localhost:3306/eshopdb?allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 		String dbUser = "root";
-		String dbPassword = "2421057837olicia";
+		String dbPassword = "2421057837olicia!";
 		String username=req.getParameter("username");
 		
 		PrintWriter pwriter = res.getWriter();

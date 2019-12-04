@@ -99,7 +99,10 @@ public class Product extends HttpServlet{
 		"				<div class=\"container\">\r\n" + 
 		"					<div class=\"header_right\">\r\n" + 
 		"						<div class=\"login_register_btn\">\r\n" + 
-		"							<a href=\"login_register.html\"><i>" + username  + "</i></a>\r\n" + 
+		"							<form action=\"UserInfo\" method=\"post\">\r\n" + 
+		"								<input name=\"username\" type=\"hidden\" value=\"" + username + "\">\r\n" + 
+		"								<i><input type=\"submit\" value=\" " + username + " \" style=\"padding:2px; margin-top: 10px;cursor: pointer;font-size:15px;line-height: 30px;color:white;background-color:#353c42;font-weight:bold;border-color:#4d565f;border-width: 3px;border-radius:5px;\"></i>\r\n" +
+		"							</form>\r\n" +
 		"						</div>\r\n" + 
 		"						<div class=\"cart_btn\">\r\n" + 
 		"							<form action=\"Cart\" method=\"post\">\r\n" + 
@@ -215,7 +218,7 @@ public class Product extends HttpServlet{
 		/****************  START OF JDBC STUFF  *******************/
 		String url = "jdbc:mysql://localhost:3306/eshopdb?allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 		String dbUser = "root";
-		String dbPassword = "2421057837olicia";
+		String dbPassword = "2421057837olicia!";
 		
 		String username = req.getParameter("username");
 		String image_source = req.getParameter("image_source");

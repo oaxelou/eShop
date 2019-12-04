@@ -175,7 +175,7 @@ public class Checkout extends Cart{
 		/****************  START OF JDBC STUFF  *******************/
 		String url = "jdbc:mysql://localhost:3306/eshopdb?allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 		String dbUser = "root";
-		String dbPassword = "2421057837olicia";
+		String dbPassword = "2421057837olicia!";
 		
 
 		try {
