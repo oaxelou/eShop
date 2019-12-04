@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>eShop</display-name>
+
+ <servlet>
+  <servlet-name>MyLoginServlet</servlet-name>
+  <servlet-class>Util.Login</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>MyLoginServlet</servlet-name>
+  <url-pattern>/login</url-pattern>
+</servlet-mapping>
+  
+     
+<servlet>
+  <servlet-name>MyRegisterServlet</servlet-name>
+  <servlet-class>Util.Register</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>MyRegisterServlet</servlet-name>
+  <url-pattern>/register</url-pattern>
+</servlet-mapping>
+
+  
+      
+<servlet>
+  <servlet-name>MyIndex</servlet-name>
+  <servlet-class>Util.Index</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>MyIndex</servlet-name>
+  <url-pattern>/index</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>MyCart</servlet-name>
+  <servlet-class>Util.Cart</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>MyCart</servlet-name>
+  <url-pattern>/Cart</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>MyShirts</servlet-name>
+  <servlet-class>Util.Shirts</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>MyShirts</servlet-name>
+  <url-pattern>/Shirts</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+  <servlet-name>MyTrousers</servlet-name>
+  <servlet-class>Util.Trousers</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>MyTrousers</servlet-name>
+  <url-pattern>/Trousers</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+  <servlet-name>MyShoes</servlet-name>
+  <servlet-class>Util.Shoes</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>MyShoes</servlet-name>
+  <url-pattern>/Shoes</url-pattern>
+</servlet-mapping>
+  
+<servlet>
+  <servlet-name>AboutUs</servlet-name>
+  <servlet-class>Util.AboutUs</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>AboutUs</servlet-name>
+  <url-pattern>/AboutUs</url-pattern>
+</servlet-mapping>
+  
+<servlet>
+  <servlet-name>Checkout</servlet-name>
+  <servlet-class>Util.Checkout</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>Checkout</servlet-name>
+  <url-pattern>/Checkout</url-pattern>
+</servlet-mapping>
+  
+<servlet>
+  <servlet-name>ClearCart</servlet-name>
+  <servlet-class>Util.ClearCart</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>ClearCart</servlet-name>
+  <url-pattern>/ClearCart</url-pattern>
+</servlet-mapping>
+    
+<servlet>
+<servlet-name>ThankYou</servlet-name>
+  <servlet-class>Util.ThankYou</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>ThankYou</servlet-name>
+  <url-pattern>/ThankYou</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>UserInfo</servlet-name>
+  <servlet-class>Util.UserInfo</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>UserInfo</servlet-name>
+  <url-pattern>/UserInfo</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>DeleteUser</servlet-name>
+  <servlet-class>Util.DeleteUser</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>DeleteUser</servlet-name>
+  <url-pattern>/DeleteUser</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>Product</servlet-name>
+  <servlet-class>Util.Product</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>Product</servlet-name>
+  <url-pattern>/Product</url-pattern>
+</servlet-mapping>
+
+
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  
+</web-app>

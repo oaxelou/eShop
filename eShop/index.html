@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Ecommerce Website Design</title>
+	<link type="text/css" rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main">
+
+	<div class="topbar"></div>
+		<div class="social_icon">
+			<div class="container">
+
+				<div class="header_right">
+					<div class="login_register_btn">
+			            <form action="login_register.html" method="get">
+			            	<input type="submit" value=" Login / Register " style="padding:2px; margin-top: 10px;cursor: pointer;font-size:15px;line-height: 30px;color:white;background-color:#353c42;font-weight:bold;border-color:#4d565f;border-width: 3px;border-radius:5px;">
+			            </form>
+					</div>
+					<div class="cart_btn">
+						<form action="Cart" method="get">
+							<input name="username" value="0" type="hidden">
+							<img src="images/cart.png">
+							<span><input type="submit" value="Cart" class="cart_submit"></span>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="header">
+			<div class="container">
+				<div class="navbar">
+					<div class="nav_background">
+						<div class="home_btn"><a href="index">HOME</a></div>
+
+						<div class="dropdown">
+							<button class="dropbtn">WOMEN</button>
+							<div class="dropdown-content">
+								<a href = "Shirts">SHIRTS</a>
+								<a href = "Trousers">TROUSERS</a>
+								<a href = "Shoes">SHOES</a>
+							</div>
+						</div>
+
+						<div class="about_us_btn"><a href="AboutUs">ABOUT US</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!----------------------------------------------->
+
+	<div class="main_body">
+		<div class="container">
+			<div class="welcome_text">
+				<h1>WELCOME TO <span> OUR ESHOP </span></h1>
+				<!-- <h3> Check out our latest products</h3> -->
+			</div>
+		</div>
+		
+		<div class="slider">
+			<div class="container">
+				<div class="slideshow">
+					<img src="images/slideshow/1.png">
+					<img src="images/slideshow/2.png">
+					<img src="images/slideshow/3.png">
+				</div>
+				<div class="arrows">
+					<a href="#" id="prev"> <img src="images/slideshow/arrows/circular_prev.png"></a>
+					<a href="#" id="next"> <img src="images/slideshow/arrows/circular_next.png"></a>
+				</div>
+			</div>
+		</div>
+
+	<!----------------------------------------------->
+
+	<div class="footer">
+		<div class="container">
+			<div class="column3">
+				<h4>About Us</h4>
+				<p>We are undergraduate students
+				at the University of Thessaly, in
+				particular in the department of
+				Electrical and Computer Engineering.</p>
+				<br><h4>Follow us on social media!</h4>
+				<p> <img src="images/media/facebook_icon.png">
+					<img src="images/media/twitter_icon.png">
+					<img src="images/media/instagram_icon.png">
+				</p>
+			</div>
+
+			<div class="column3 second-column">
+				<h4>Location</h4>
+				<div class="mapouter">
+					<div class="gmap_canvas">
+						<iframe width="201" height="159" id="gmap_canvas" src="https://maps.google.com/maps?q=volos&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+						</iframe>
+					</div>
+				</div>
+			</div>
+
+			<div class="column3 third-column">
+				<h4>Contact Us</h4>
+				<p> We provide 24hr phone support </p>
+				<br>
+				<ul class="contact_info_list">
+					<li>Eshop, Helen & Olympia</li>
+					<li>Volos, Magnesia, Greece</li>
+					<li><img src="images/contact/phone_icon.png">+30 24210 56666</li>
+					<li><img src="images/contact/email_icon.png"><a href=mailto:eshop@gmail.com>eshop@gmail.com</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="bottom">
+	<div class="container">
+			<div class="copyrights">
+				©2019 All Rights Reserved
+			</div>
+		</div>
+	</div>
+</div> <!--main-->
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="js/jquery.cycle.all.js"></script>
+<script>
+	$('.slideshow').cycle({
+		next:'#next',
+		prev: '#prev'
+	})
+
+</script>
+</body>
+</html>
