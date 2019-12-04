@@ -8,7 +8,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- Schema eshopdb
 -- -----------------------------------------------------
 
-CREATE SCHEMA IF NOT EXISTS `eshopdb` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA IF NOT EXISTS `eshopdb`;
 USE `eshopdb` ;
 
 CREATE TABLE IF NOT EXISTS `eshopdb`.`user` (
