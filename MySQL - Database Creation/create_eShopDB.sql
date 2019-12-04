@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `eshopdb`.`product` (
   `idproduct` INT NOT NULL,
   `pname` VARCHAR(45) NOT NULL,
   `description` VARCHAR(100) NOT NULL,
-  `stock` INT(11) UNSIGNED NOT NULL,
+  `stock` INT UNSIGNED NOT NULL,
   `price` FLOAT NOT NULL,
   `image_source` VARCHAR(100) NULL,
   PRIMARY KEY (`idproduct`))
@@ -58,6 +58,36 @@ CREATE TABLE IF NOT EXISTS `eshopdb`.`cart` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
+CREATE TABLE IF NOT EXISTS `eShopDB`.`history` (
+  `order_id` INT AUTO_INCREMENT NOT NULL,
+  `username_history_FK` VARCHAR(16) NOT NULL,
+  `order_date` datetime NOT NULL,
+  PRIMARY KEY (`order_id`),
+  INDEX `username_idx` (`username_history_FK` ASC),
+  CONSTRAINT `username_history_FK`
+    FOREIGN KEY (`username_history_FK`)
+    REFERENCES `eShopDB`.`user` (`username`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `eShopDB`.`order` (
+  `order_id_FK` INT NOT NULL,
+  `idproduct_order_FK` INT NOT NULL,
+  `quantity` INT NOT NULL,
+  PRIMARY KEY (`order_id_FK`, `idproduct_order_FK`),
+  INDEX `idproduct_idx` (`idproduct_order_FK` ASC),
+  CONSTRAINT `idproduct_order_FK`
+    FOREIGN KEY (`idproduct_order_FK`)
+    REFERENCES `eShopDB`.`product` (`idproduct`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `order_id_FK`
+    FOREIGN KEY (`order_id_FK`)
+    REFERENCES `eShopDB`.`history` (`order_id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `eshopdb`.`belongsto` (
   `idproduct_belongsto_FK` INT NOT NULL,
