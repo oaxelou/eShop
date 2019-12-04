@@ -1,0 +1,49 @@
+
+Για να τρέξει η εφαρμογή χρειάζονται τα εξής:
+
+1) Apache Tomcat 
+2) MySQL
+3) JDBC
+4) JDK
+
+---------------------------------------------
+
+Για τη δημιουργία της βάσης: 
+Είτε μέσω MySQL Workbench, είτε μέσω Commandline.
+	
+	
+Για Commandline:
+
+1) Στο τέρμιναλ: mysql -u <username> -p για τη σύνδεση με τη mysql
+2) source create_eShopDB.sql για τη δημιουργία της βάσης και των πινάκων
+3) source add_categories_and_products.sql για να προσθέσουμε τα προϊόντα
+
+
+--------------------------------------------
+
+Για το χτίσιμο της εφαρμογής στον tomcat:
+*Έστω ότι το directory του tomcat ειναι: /opt/tomcat
+
+1) Στον φάκελο εγκατάστασης του apache tomcat, 
+στον φάκελο /opt/tomcat/webapps, πρέπει να βρίσκεται ο φάκελος eShop της εφαρμογής μας
+ώστε να τρέξει στον server του tomcat
+
+2) To compilation της εφαρμογής:
+Στον φάκελο /opt/tomcat/webapps/eShop/WEB-INF/classes :
+Linux:   javac -cp ../lib/mysql-connector-java-5.1.48.jar:../lib/servlet-api.jar Util/*.java Bean/*.java
+Windows: javac -cp ..\lib\mysql-connector-java-5.1.48.jar;..\lib\servlet-api.jar Util\*.java Bean\*.java
+
+3) Για την ενεργοποίηση του server: 
+Linux: /opt/tomcat/bin/startup.sh
+Windows: C:\...\tomcat\bin\startup.bat
+
+4) Για το τρέξιμο της εφαρμογής:
+Σε έναν browser: http://localhost:8080/eShop/
+
+-------------------------------------------
+
+
+Σχόλια:
+-> Ανάλογα με το όνομα χρήστη που θα βάλουμε στη MySQL, θα πρέπει να 
+προσαρμόσουμε και τον αντίστοιχο κώδικα των java servlets,
+όταν πάει να συνδεθεί στη βάση.
