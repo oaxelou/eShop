@@ -1,17 +1,17 @@
 -- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=1;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema eShopDB
+-- Schema eshopdb
 -- -----------------------------------------------------
 
-CREATE SCHEMA IF NOT EXISTS `eShopDB` DEFAULT CHARACTER SET utf8 ;
-USE `eShopDB` ;
+CREATE SCHEMA IF NOT EXISTS `eshopdb` DEFAULT CHARACTER SET utf8 ;
+USE `eshopdb` ;
 
-CREATE TABLE IF NOT EXISTS `eShopDB`.`user` (
+CREATE TABLE IF NOT EXISTS `eshopdb`.`user` (
   `username` VARCHAR(16) NOT NULL,
   `password` VARCHAR(32) NOT NULL,
   `first_name` VARCHAR(45) NOT NULL,
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `eShopDB`.`user` (
   PRIMARY KEY (`username`))
 ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS `eShopDB`.`product` (
+CREATE TABLE IF NOT EXISTS `eshopdb`.`product` (
   `idproduct` INT NOT NULL,
   `pname` VARCHAR(45) NOT NULL,
   `description` VARCHAR(100) NOT NULL,
@@ -34,44 +34,44 @@ CREATE TABLE IF NOT EXISTS `eShopDB`.`product` (
   PRIMARY KEY (`idproduct`))
 ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS `eShopDB`.`category` (
+CREATE TABLE IF NOT EXISTS `eshopdb`.`category` (
   `category_name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`category_name`))
 ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS `eShopDB`.`cart` (
+CREATE TABLE IF NOT EXISTS `eshopdb`.`cart` (
   `username_FK` VARCHAR(16) NOT NULL,
   `idproduct_cart_FK` INT NOT NULL,
   `quantity` INT NOT NULL,
   PRIMARY KEY (`username_FK`, `idproduct_cart_FK`),
   KEY `username_FK`(`username_FK`),
-  INDEX `idproduct_idx` (`idproduct_cart_FK` ASC) VISIBLE,
+  INDEX `idproduct_idx` (`idproduct_cart_FK` ASC),
   CONSTRAINT `username_FK`
     FOREIGN KEY (`username_FK`)
-    REFERENCES `eShopDB`.`user` (`username`)
+    REFERENCES `eshopdb`.`user` (`username`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   CONSTRAINT `idproduct_cart_FK`
     FOREIGN KEY (`idproduct_cart_FK`)
-    REFERENCES `eShopDB`.`product` (`idproduct`)
+    REFERENCES `eshopdb`.`product` (`idproduct`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
-CREATE TABLE IF NOT EXISTS `eShopDB`.`belongsTo` (
+CREATE TABLE IF NOT EXISTS `eshopdb`.`belongsto` (
   `idproduct_belongsto_FK` INT NOT NULL,
   `category_name_FK` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idproduct_belongsto_FK`, `category_name_FK`),
-  INDEX `category_name_idx` (`category_name_FK` ASC) VISIBLE,
+  INDEX `category_name_idx` (`category_name_FK` ASC) ,
   CONSTRAINT `idproduct_belongsto_FK`
     FOREIGN KEY (`idproduct_belongsto_FK`)
-    REFERENCES `eShopDB`.`product` (`idproduct`)
+    REFERENCES `eshopdb`.`product` (`idproduct`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   CONSTRAINT `category_name_FK`
     FOREIGN KEY (`category_name_FK`)
-    REFERENCES `eShopDB`.`category` (`category_name`)
+    REFERENCES `eshopdb`.`category` (`category_name`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;

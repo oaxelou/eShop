@@ -1,3 +1,5 @@
+use eshopdb;
+
 -- Create the categories
 insert into category values ("Shirts");
 insert into category values ("Trousers");
